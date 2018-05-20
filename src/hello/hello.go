@@ -5,8 +5,9 @@ import (
     "context"
     "github.com/aws/aws-lambda-go/lambda"
 )
+
 type MyEvent struct {
-    Name string 'json: "name"'
+    Name string `json: "name"`
 }
 
 func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
@@ -15,4 +16,5 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
 
 func main() {
     fmt.Printf("Hello, world!\n")
+    lambda.Start(HandleRequest)
 }
