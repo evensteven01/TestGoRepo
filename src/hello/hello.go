@@ -12,7 +12,7 @@ type MyEvent struct {
 }
 
 func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
-    log.Print("Handling event %s!", name.Name)
+    log.Print("Handling event " + name.Name)
     return fmt.Sprintf("Hello %s!", name.Name), nil
 }
 
