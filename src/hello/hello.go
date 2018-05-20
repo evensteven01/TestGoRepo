@@ -4,6 +4,7 @@ import (
     "fmt"
     "context"
     "github.com/aws/aws-lambda-go/lambda"
+    "log"
 )
 
 type MyEvent struct {
@@ -11,6 +12,7 @@ type MyEvent struct {
 }
 
 func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
+    log.Print("Handling event %s!", name.Name)
     return fmt.Sprintf("Hello %s!", name.Name), nil
 }
 
