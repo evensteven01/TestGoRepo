@@ -16,7 +16,7 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
     return fmt.Sprintf("Hello %s!", name.Name), nil
 }
 
-func AddYouSaid(str string) {
+func AddYouSaid(str string) string {
     return "You said: " + str
 }
 
