@@ -16,6 +16,10 @@ func HandleRequest(ctx context.Context, name MyEvent) (string, error) {
     return fmt.Sprintf("Hello %s!", name.Name), nil
 }
 
+func AddYouSaid(str string) {
+    return "You said: " + str
+}
+
 func main() {
     fmt.Printf("Hello, world!\n")
     lambda.Start(HandleRequest)
